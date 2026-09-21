@@ -46,22 +46,6 @@ if (typingEl) {
     type();
 }
 
-// Skill bar animation
-const skillFills = document.querySelectorAll('.skill-fill');
-if (skillFills.length) {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                el.style.width = el.dataset.width + '%';
-                observer.unobserve(el);
-            }
-        });
-    }, { threshold: 0.3 });
-
-    skillFills.forEach(el => observer.observe(el));
-}
-
 // Fade in on scroll
 const fadeEls = document.querySelectorAll('.exp-item, .post-card, .skill-category, .stat-item, .timeline-item');
 if (fadeEls.length) {
