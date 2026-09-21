@@ -1,0 +1,18 @@
+# Build output
+dist/
+*.zip
+
+# Ghost backups and exports: contain credentials, API keys and member data. Never commit.
+*.sql
+*.sql.gz
+*.ghost.*.json
+backups/
+
+# Secrets
+.env
+*.env
+
+# Tooling / OS
+node_modules/
+.DS_Store
+Thumbs.db
