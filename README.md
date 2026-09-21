@@ -59,7 +59,7 @@ Experience and Contact content is hardcoded in their templates, so editing those
 
 ## Versioning
 
-Theme versions follow `theme/package.json` and are tagged in git:
+Theme versions follow `theme/package.json` and are tagged in git. To browse an older version on GitHub, open the branch dropdown (`main`) above the file list and switch to the **Tags** tab. Locally, `git tag` lists all versions and `git checkout v1.0.0` shows the theme exactly as it was in that version.
 
 | Tag | Changes |
 |---|---|
