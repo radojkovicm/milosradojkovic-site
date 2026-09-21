@@ -1,0 +1,47 @@
+{{!< default}}
+
+<article class="post-full">
+    <div class="post-hero">
+        <div class="section-container">
+            <div class="post-meta-top">
+                <a href="/blog" class="post-back">← back to blog</a>
+                <span class="post-date">{{date published_at format="DD MMM YYYY"}}</span>
+            </div>
+            <h1 class="post-full-title">{{title}}</h1>
+            {{#if custom_excerpt}}
+            <p class="post-full-excerpt">{{custom_excerpt}}</p>
+            {{/if}}
+            <div class="post-author">
+                <span class="author-name">{{primary_author.name}}</span>
+                <span class="post-read-time">{{reading_time}}</span>
+            </div>
+        </div>
+    </div>
+
+    {{#if feature_image}}
+    <div class="post-feature-image">
+        <div class="section-container">
+            <img src="{{feature_image}}" alt="{{title}}">
+        </div>
+    </div>
+    {{/if}}
+
+    <div class="post-content-wrap">
+        <div class="section-container">
+            <div class="post-content gh-content">
+                {{content}}
+            </div>
+
+            <div class="post-footer">
+                {{#if tags}}
+                <div class="post-tags">
+                    {{#foreach tags}}
+                    <a href="{{url}}" class="post-tag">#{{name}}</a>
+                    {{/foreach}}
+                </div>
+                {{/if}}
+                <a href="/blog" class="btn-secondary">← Back to Blog</a>
+            </div>
+        </div>
+    </div>
+</article>

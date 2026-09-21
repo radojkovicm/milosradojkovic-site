@@ -1,0 +1,37 @@
+{{!< default}}
+
+<section class="page-hero">
+    <div class="section-container">
+        <span class="section-tag">$ ls ~/blog/</span>
+        <h1 class="page-title">Blog</h1>
+        <p class="page-subtitle">Notes on Business Central, infrastructure, automation, and things I find interesting.</p>
+    </div>
+</section>
+
+<section class="blog-section">
+    <div class="section-container">
+        {{#get "posts" limit="all"}}
+        {{#if posts}}
+        <div class="posts-grid-full">
+            {{#foreach posts}}
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-date">{{date published_at format="DD MMM YYYY"}}</span>
+                    {{#if tags}}
+                    <span class="post-tag-inline">{{primary_tag.name}}</span>
+                    {{/if}}
+                </div>
+                <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+                <p class="post-excerpt">{{excerpt words="30"}}</p>
+                <a href="{{url}}" class="post-link">read_more() →</a>
+            </article>
+            {{/foreach}}
+        </div>
+        {{else}}
+        <div class="no-posts">
+            <span class="mono">// No posts yet. Check back soon.</span>
+        </div>
+        {{/if}}
+        {{/get}}
+    </div>
+</section>

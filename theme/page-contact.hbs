@@ -1,0 +1,87 @@
+{{!< default}}
+
+<section class="page-hero">
+    <div class="section-container">
+        <span class="section-tag">$ ping milos@radojkovic.dev</span>
+        <h1 class="page-title">Contact</h1>
+        <p class="page-subtitle">Have a project in mind or just want to connect? I'm always open to interesting conversations.</p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="section-container">
+        <div class="contact-grid">
+
+            <div class="contact-left">
+                <div class="contact-card linkedin-card">
+                    <div class="contact-card-icon">in</div>
+                    <div class="contact-card-body">
+                        <h3>LinkedIn</h3>
+                        <p>Connect with me professionally</p>
+                        <a href="https://www.linkedin.com/in/milos-radojkovic-mrx/" target="_blank" class="contact-link">milos-radojkovic-mrx →</a>
+                    </div>
+                </div>
+
+                <div class="contact-card email-card">
+                    <div class="contact-card-icon">@</div>
+                    <div class="contact-card-body">
+                        <h3>Email</h3>
+                        <p>For direct inquiries</p>
+                        <a href="mailto:milos.radojkovic92@gmail.com" class="contact-link">milos.radojkovic92@gmail.com →</a>
+                    </div>
+                </div>
+
+                <div class="contact-qr">
+                    <div class="qr-frame">
+                        <div id="qrcode"></div>
+                    </div>
+                    <span class="qr-label">Scan to open LinkedIn</span>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-textarea" placeholder="Hey Miloš, I'd like to..." rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary form-submit">Send Message →</button>
+                    <p class="form-note">// This form opens your email client</p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+if (document.getElementById('qrcode')) {
+    new QRCode(document.getElementById('qrcode'), {
+        text: "https://www.linkedin.com/in/milos-radojkovic-mrx/",
+        width: 140,
+        height: 140,
+        colorDark: "#00d4aa",
+        colorLight: "#0a0a0f",
+    });
+}
+
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = this.querySelector('input[type="text"]').value;
+        const email = this.querySelector('input[type="email"]').value;
+        const message = this.querySelector('textarea').value;
+        window.location.href = `mailto:milos.radojkovic92@gmail.com?subject=Portfolio Contact from ${name}&body=${encodeURIComponent(message)}%0A%0AFrom: ${name} (${email})`;
+    });
+}
+</script>

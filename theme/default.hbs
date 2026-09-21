@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{meta_title}}</title>
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset "css/style.css"}}">
+
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    <div class="noise-overlay"></div>
+    <div class="grid-bg"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">MR</span>
+                <span class="logo-bracket">]</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link {{#if is_home}}active{{/if}}">~/home</a></li>
+                <li><a href="/experience" class="nav-link">~/experience</a></li>
+                <li><a href="/blog/" class="nav-link">~/blog</a></li>
+                <li><a href="/contact" class="nav-link">~/contact</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        {{{body}}}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">[MR]</span>
+                <span class="footer-copy">© {{date format="YYYY"}} Miloš Radojković</span>
+            </div>
+            <div class="footer-right">
+                <a href="https://www.linkedin.com/in/milos-radojkovic-mrx/" target="_blank" class="footer-link">LinkedIn</a>
+                <a href="https://github.com/radojkovicm" target="_blank" class="footer-link">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{asset "js/main.js"}}"></script>
+    {{ghost_foot}}
+</body>
+</html>
