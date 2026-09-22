@@ -1,6 +1,10 @@
 ﻿# milosradojkovic.dev
 
-Source for [milosradojkovic.dev](https://milosradojkovic.dev) — personal portfolio and blog of Miloš Radojković, Business Central developer and systems administrator.
+Source for **[milosradojkovic.dev](https://milosradojkovic.dev)** — personal portfolio and blog of Miloš Radojković, Business Central developer and systems administrator.
+
+[![Visit the live site](docs/screenshot.png)](https://milosradojkovic.dev)
+
+*(click the screenshot to see it live)*
 
 The site runs on a self-hosted [Ghost](https://ghost.org) 6 instance. This repository contains the custom theme and routing configuration only. Content (posts, pages, settings, images) lives in Ghost's database and content volume, not here.
 
